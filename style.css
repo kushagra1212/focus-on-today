@@ -1,0 +1,196 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: rgba(72, 163, 0, 0.07);
+  width: 100%;
+  height: 100%;
+}
+
+.header {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 2rem;
+  font-weight: bold;
+  color: rgba(72, 163, 0, 1);
+}
+
+.header__title__highlight {
+  color: rgba(0, 0, 0);
+}
+
+.card {
+  background-color: rgba(251, 251, 251, 1);
+  aspect-ratio: 810/660;
+  width: 35%;
+  margin-top: 2rem;
+  border: 1px solid transparent;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 2rem;
+  justify-self: center;
+}
+
+.card__header__title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.card__header__title__text {
+  font-size: 2rem;
+  margin-right: 1rem;
+}
+
+.card__header__subtitle {
+  font-size: 0.7rem;
+  font-weight: 300;
+  color: rgba(133, 133, 133, 1);
+}
+
+.card__body__progress {
+  background-color: rgba(72, 163, 0, 0.1);
+  height: 2rem;
+  margin: 1rem 0;
+  border-radius: 15px;
+}
+
+.card__body__progress__bar {
+  background-color: rgba(72, 163, 0, 1);
+  border-radius: 15px;
+  height: 100%;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  opacity: 0;
+}
+
+.card__body__progress__bar__label {
+  color: white;
+  font-size: 0.7rem;
+}
+
+.card__body__error {
+  font-size: 0.7rem;
+  font-weight: 300;
+  visibility: hidden;
+}
+
+.card__body__error--occurred {
+  visibility: visible;
+  color: rgba(255, 81, 81, 1);
+}
+.card__body__list {
+  margin: 1rem 0;
+  display: grid;
+  row-gap: 2rem;
+}
+.card__body__list__item {
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  height: 4rem;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+}
+.card__body__list__item input[type="checkbox"] {
+  margin-right: 1rem;
+  appearance: none;
+  -webkit-appearance: none;
+  border: 0.1rem solid rgba(97, 72, 28, 0.3);
+  height: 1.3rem;
+  width: 1.3rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card__body__list__item input[type="checkbox"]::before {
+  content: "";
+  height: 1.3rem;
+  width: 1.3rem;
+  transform: scale(0);
+  border-radius: 50%;
+
+  clip-path: polygon(
+    15% 60%,
+    /* Start of the left bottom edge */ 25% 70%,
+    /* Bottom of the left slope */ 50% 90%,
+    /* Tip of the bottom left slope */ 85% 25%,
+    /* Top of the right slope */ 75% 15%,
+    /* Start of the right tip */ 45% 75%,
+    /* Downward return on the left slope */ 20% 55%
+      /* Closing back to the left edge */
+  );
+  background-color: white;
+}
+
+.card__body__list__item input[type="checkbox"]:checked {
+  border: none;
+  background-color: #48a300;
+}
+.card__body__list__item input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}
+.card__body__list__item input[type="checkbox"]:hover {
+  color: black;
+}
+
+.card__body__list__item input[type="text"] {
+  width: 100%;
+  border: none;
+  outline: none;
+}
+.card__body__list__item input[type="text"]:disabled {
+  background-color: transparent;
+}
+.card__body__list__item_text--strike {
+  color: rgba(72, 163, 0, 1);
+  text-decoration: line-through;
+}
+
+.card__body__list__item input[type="text"]::placeholder,
+.card__body__list__item input[type="text"]::-moz-placeholder {
+  color: rgba(217, 217, 217, 1);
+  font-size: 0.9rem;
+}
+
+.card__footer {
+  margin: 3rem 0;
+  flex: 1;
+  display: grid;
+  grid-template-rows: 5rem 1fr;
+  justify-content: center;
+  grid-row: 3rem;
+}
+.card__footer__title {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.card__footer__subtitle {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: rgba(133, 133, 133, 1);
+}
+@media screen and (max-width: 1024px) {
+  .card {
+    width: 60%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .card {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 425px) {
+  .card {
+    width: 95%;
+  }
+}
